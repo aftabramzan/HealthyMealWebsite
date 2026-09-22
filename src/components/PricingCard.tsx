@@ -1,5 +1,6 @@
 import { Pressable, Text, View } from 'react-native';
 import type { PricingPlan } from '../data/mockData';
+import { goToSection } from '../utils/navigation';
 
 export function PricingCard({ plan }: { plan: PricingPlan }) {
   return (
@@ -9,7 +10,7 @@ export function PricingCard({ plan }: { plan: PricingPlan }) {
       <Text className={`mt-2 min-h-[42px] text-sm leading-5 ${plan.popular ? 'text-white/65' : 'text-gray-500'}`}>{plan.description}</Text>
       <View className="my-6 flex-row items-baseline"><Text className={`font-display text-4xl ${plan.popular ? 'text-white' : 'text-ink'}`}>AED {plan.price}</Text><Text className={`ml-2 text-xs ${plan.popular ? 'text-white/60' : 'text-gray-500'}`}>{plan.cadence}</Text></View>
       <View className="mb-7 gap-3">{plan.features.map((feature) => <Text key={feature} className={`text-sm ${plan.popular ? 'text-white/80' : 'text-gray-600'}`}>✓  {feature}</Text>)}</View>
-      <Pressable className={`items-center rounded-full py-3 active:opacity-80 ${plan.popular ? 'bg-white' : 'border border-olive'}`} accessibilityRole="button"><Text className={`text-sm font-bold ${plan.popular ? 'text-ink' : 'text-olive'}`}>Get Started</Text></Pressable>
+      <Pressable onPress={() => goToSection('contact')} className={`items-center rounded-full py-3 active:opacity-80 ${plan.popular ? 'bg-white' : 'border border-olive'}`} accessibilityRole="button"><Text className={`text-sm font-bold ${plan.popular ? 'text-ink' : 'text-olive'}`}>Get Started</Text></Pressable>
     </View>
   );
 }
