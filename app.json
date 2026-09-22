@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Healthy Meals",
+    "slug": "healthy-meals",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "web": { "bundler": "metro", "favicon": "./assets/reference-hero.png" },
+    "assetBundlePatterns": ["**/*"]
+  }
+}
