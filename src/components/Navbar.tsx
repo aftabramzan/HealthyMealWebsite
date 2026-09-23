@@ -46,7 +46,7 @@ export function Navbar() {
     const isActive = activeId === id;
     const textClass = mobile
       ? `text-lg ${isActive ? 'font-bold text-olive' : 'text-ink'}`
-      : `text-[11px] font-medium ${isActive ? 'font-bold text-olive' : 'text-gray-600'}`;
+      : `text-[11px] font-medium transition-colors duration-200 ${isActive ? 'font-bold text-olive' : 'text-gray-600'}`;
 
     return (
       <LinkPressable
@@ -60,7 +60,7 @@ export function Navbar() {
           goToSection(id);
         }}
         accessibilityRole="link"
-        className={mobile ? 'border-b border-gray-100 py-5' : ''}
+        className={mobile ? 'border-b border-gray-100 py-5' : 'rounded-full px-3 py-2 transition-colors duration-200 hover:bg-olive/10 active:bg-olive/15'}
       >
         <Text className={textClass}>{label}</Text>
       </LinkPressable>
